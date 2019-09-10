@@ -16,22 +16,22 @@ namespace Tarun.Repository
         }
         public IEnumerable<Admin> GetAdmins => db.Admins;
 
-        public void Add(Admin admin)
+        public void Add(Admin _Admin)
         {
-            db.Admins.Add(admin);
+            db.Admins.Add(_Admin);
             db.SaveChanges();
         }
 
-        public void Delete(int? Id)
+        public void Remove(int? ID)
         {
-            Admin dbEntity = db.Admins.Find(Id);
+            Admin dbEntity = db.Admins.Find(ID);
             db.Admins.Remove(dbEntity);
             db.SaveChanges();
         }
 
-        public Admin GetAdmin(int Id)
+        public Admin GetAdmin(int ID)
         {
-            Admin dbEntity = db.Admins.Find(Id);
+            Admin dbEntity = db.Admins.Find(ID);
             return dbEntity;
         }
     }

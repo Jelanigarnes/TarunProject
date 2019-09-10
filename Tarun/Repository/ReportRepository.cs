@@ -16,22 +16,22 @@ namespace Tarun.Repository
         }
         public IEnumerable<Report> GetReports => db.Reports;
 
-        public void Add(Report report)
+        public void Add(Report _Report)
         {
-            db.Reports.Add(report);
+            db.Reports.Add(_Report);
             db.SaveChanges();
         }
 
-        public void Delete(int? Id)
+        public void Remove(int? ID)
         {
-            Report dbEntity = db.Reports.Find(Id);
+            Report dbEntity = db.Reports.Find(ID);
             db.Reports.Remove(dbEntity);
             db.SaveChanges();
         }
 
-        public Report GetReport(int Id)
+        public Report GetReport(int ID)
         {
-            Report dbEntity = db.Reports.Find(Id);
+            Report dbEntity = db.Reports.Find(ID);
             return dbEntity;
         }
     }

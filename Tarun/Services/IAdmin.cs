@@ -9,8 +9,8 @@ namespace Tarun.Services
     public interface IAdmin
     {
         IEnumerable<Admin> GetAdmins { get; }
-        Admin GetAdmin(int Id);
-        void Add(Admin admin);
-        void Delete(int? Id);
+        Admin GetAdmin(int ID);
+        void Add(Admin _Admin);
+        void Remove(int? ID);
     }
 }

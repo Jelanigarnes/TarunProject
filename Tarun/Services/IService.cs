@@ -9,9 +9,9 @@ namespace Tarun.Services
     {
 
         IEnumerable<Service> GetServices { get; }
-        Service GetService (int Id);
-        void Add(Service service);
-        void Delete(int? Id);
+        Service GetService (int ID);
+        void Add(Service _Service);
+        void Remove(int? ID);
 
     }
 }

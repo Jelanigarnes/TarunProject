@@ -9,8 +9,8 @@ namespace Tarun.Services
     public interface IContact
     {
         IEnumerable<Contact> GetContacts { get; }
-        Contact GetContact(int Id);
-        void Add(Contact contact);
-        void Delete(int? Id);
+        Contact GetContact(int ID);
+        void Add(Contact _Contact);
+        void Remove(int? ID);
     }
 }

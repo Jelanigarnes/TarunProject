@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Tarun.Models.Report>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReportTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceRequestID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceProviderID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceRequesterID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationTimeStamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceRequestID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceProviderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceRequesterID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationTimeStamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReportID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReportID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReportID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

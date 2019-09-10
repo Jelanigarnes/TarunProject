@@ -16,22 +16,22 @@ namespace Tarun.Repository
         }
         public IEnumerable<Service_Provider> GetService_Providers => db.Service_Providers;
 
-        public void Add(Service_Provider service_Provider)
+        public void Add(Service_Provider _Service_Provider)
         {
-            db.Service_Providers.Add(service_Provider);
+            db.Service_Providers.Add(_Service_Provider);
             db.SaveChanges();
         }
 
-        public void Delete(int? Id)
+        public void Remove(int? ID)
         {
-            Service_Provider dbEntity = db.Service_Providers.Find(Id);
+            Service_Provider dbEntity = db.Service_Providers.Find(ID);
             db.Service_Providers.Remove(dbEntity);
             db.SaveChanges();
         }
 
-        public Service_Provider GetService_Provider(int Id)
+        public Service_Provider GetService_Provider(int ID)
         {
-            Service_Provider dbEntity = db.Service_Providers.Find(Id);
+            Service_Provider dbEntity = db.Service_Providers.Find(ID);
             return dbEntity;
         }
     }

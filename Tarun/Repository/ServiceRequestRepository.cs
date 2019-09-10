@@ -16,22 +16,22 @@ namespace Tarun.Repository
         }
         public IEnumerable<ServiceRequest> GetServiceRequests => db.ServiceRequests;
 
-        public void Add(ServiceRequest serviceRequest)
+        public void Add(ServiceRequest _ServiceRequest)
         {
-            db.ServiceRequests.Add(serviceRequest);
+            db.ServiceRequests.Add(_ServiceRequest);
             db.SaveChanges();
         }
 
-        public void Delete(int? Id)
+        public void Remove(int? ID)
         {
-            ServiceRequest dbEntity = db.ServiceRequests.Find(Id);
+            ServiceRequest dbEntity = db.ServiceRequests.Find(ID);
             db.ServiceRequests.Remove(dbEntity);
             db.SaveChanges();
         }
 
-        public ServiceRequest GetServiceRequest(int Id)
+        public ServiceRequest GetServiceRequest(int ID)
         {
-            ServiceRequest dbEntity = db.ServiceRequests.Find(Id);
+            ServiceRequest dbEntity = db.ServiceRequests.Find(ID);
             return dbEntity;
         }
     }

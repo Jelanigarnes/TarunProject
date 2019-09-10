@@ -16,22 +16,22 @@ namespace Tarun.Repository
         }
         public IEnumerable<Contact> GetContacts => db.Contacts;
 
-        public void Add(Contact contact)
+        public void Add(Contact _Contact)
         {
-            db.Contacts.Add(contact);
+            db.Contacts.Add(_Contact);
             db.SaveChanges();
         }
 
-        public void Delete(int? Id)
+        public void Remove(int? ID)
         {
-            Contact dbEntity = db.Contacts.Find(Id);
+            Contact dbEntity = db.Contacts.Find(ID);
             db.Contacts.Remove(dbEntity);
             db.SaveChanges();
         }
 
-        public Contact GetContact(int Id)
+        public Contact GetContact(int ID)
         {
-            Contact dbEntity = db.Contacts.Find(Id);
+            Contact dbEntity = db.Contacts.Find(ID);
             return dbEntity;
         }
     }
