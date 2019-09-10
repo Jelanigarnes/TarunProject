@@ -9,21 +9,30 @@ namespace Tarun.Repository
 {
     public class ServiceRequestRepository : IServiceRequest
     {
-        public IEnumerable<ServiceRequest> GetServiceRequests => throw new NotImplementedException();
+        private DB_Context db;
+        public ServiceRequestRepository(DB_Context _db)
+        {
+            db = _db;
+        }
+        public IEnumerable<ServiceRequest> GetServiceRequests => db.ServiceRequests;
 
         public void Add(ServiceRequest serviceRequest)
         {
-            throw new NotImplementedException();
+            db.ServiceRequests.Add(serviceRequest);
+            db.SaveChanges();
         }
 
         public void Delete(int? Id)
         {
-            throw new NotImplementedException();
+            ServiceRequest dbEntity = db.ServiceRequests.Find(Id);
+            db.ServiceRequests.Remove(dbEntity);
+            db.SaveChanges();
         }
 
         public ServiceRequest GetServiceRequest(int Id)
         {
-            throw new NotImplementedException();
+            ServiceRequest dbEntity = db.ServiceRequests.Find(Id);
+            return dbEntity;
         }
     }
 }

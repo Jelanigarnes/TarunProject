@@ -10,7 +10,7 @@ namespace Tarun.Services
     {
         IEnumerable<ServiceRequester> GetServiceRequesters { get; }
         ServiceRequester GetServiceRequest(int Id);
-        void Add(ServiceRequester serviceRequest);
+        void Add(ServiceRequester serviceRequester);
         void Delete(int? Id);
     }
 }

@@ -6,24 +6,33 @@ using Tarun.Models;
 using Tarun.Services;
 
 namespace Tarun.Repository
-{
+{   
     public class ReportRepository : IReport
     {
-        public IEnumerable<Report> GetReports => throw new NotImplementedException();
+        private DB_Context db;
+        public ReportRepository(DB_Context _db)
+        {
+            db = _db;
+        }
+        public IEnumerable<Report> GetReports => db.Reports;
 
         public void Add(Report report)
         {
-            throw new NotImplementedException();
+            db.Reports.Add(report);
+            db.SaveChanges();
         }
 
         public void Delete(int? Id)
         {
-            throw new NotImplementedException();
+            Report dbEntity = db.Reports.Find(Id);
+            db.Reports.Remove(dbEntity);
+            db.SaveChanges();
         }
 
         public Report GetReport(int Id)
         {
-            throw new NotImplementedException();
+            Report dbEntity = db.Reports.Find(Id);
+            return dbEntity;
         }
     }
 }

@@ -9,21 +9,30 @@ namespace Tarun.Repository
 {
     public class ContactRepository : IContact
     {
-        public IEnumerable<Contact> GetContacts => throw new NotImplementedException();
+        private DB_Context db;
+        public ContactRepository(DB_Context _db)
+        {
+            db = _db;
+        }
+        public IEnumerable<Contact> GetContacts => db.Contacts;
 
         public void Add(Contact contact)
         {
-            throw new NotImplementedException();
+            db.Contacts.Add(contact);
+            db.SaveChanges();
         }
 
         public void Delete(int? Id)
         {
-            throw new NotImplementedException();
+            Contact dbEntity = db.Contacts.Find(Id);
+            db.Contacts.Remove(dbEntity);
+            db.SaveChanges();
         }
 
         public Contact GetContact(int Id)
         {
-            throw new NotImplementedException();
+            Contact dbEntity = db.Contacts.Find(Id);
+            return dbEntity;
         }
     }
 }

@@ -13,13 +13,13 @@ namespace Tarun.Repository
         {
 
         }
-        DbSet<Admin> Admins { get; set; }
-        DbSet<Contact> Contacts { get; set; }
-        DbSet<Report> Reports { get; set; }
-        DbSet<Service> Services { get; set; }
-        DbSet<Service_Provider> Service_Providers { get; set; }
-        DbSet<ServiceRequest> ServiceRequests { get; set; }
-        DbSet<ServiceRequester> ServiceRequesters { get; set; }
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Report> Reports { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Service_Provider> Service_Providers { get; set; }
+        public DbSet<ServiceRequest> ServiceRequests { get; set; }
+        public DbSet<ServiceRequester> ServiceRequesters{ get;set; }
 
     }
 }
