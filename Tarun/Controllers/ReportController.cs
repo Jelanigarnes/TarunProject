@@ -36,5 +36,17 @@ namespace Tarun.Controllers
             return View(model);
 
         }
+        [HttpGet]
+        public IActionResult Delete(int? ID)
+        {
+            Report model = _Report.GetReport(ID);
+            return View(model);
+        }
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirm(int? ID)
+        {
+            _Report.Remove(ID);
+            return RedirectToAction("Index");
+        }
     }
 }

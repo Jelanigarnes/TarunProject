@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Tarun.Models;
 using Tarun.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Tarun.Controllers
 {
-    public class ContactController : Controller
+    public class ServiceRequesterController : Controller
     {
-        private readonly IContact _Contact;
-
-        public ContactController(IContact _IContact)
+        private readonly IServiceRequester _ServiceRequester;
+        public ServiceRequesterController(IServiceRequester _IServiceRequester)
         {
-            _Contact = _IContact;
+             _ServiceRequester= _IServiceRequester;
         }
         public IActionResult Index()
         {
-            return View(_Contact.GetContacts);
+            return View(_ServiceRequester.GetServiceRequesters);
         }
         [HttpGet]
         public IActionResult Create()
@@ -26,26 +25,24 @@ namespace Tarun.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Contact model)
+        public IActionResult Create(ServiceRequester model)
         {
             if (ModelState.IsValid)
             {
-                _Contact.Add(model);
-                return RedirectToAction("Index");
+                _ServiceRequester.Add(model);
             }
             return View(model);
-
         }
         [HttpGet]
         public IActionResult Delete(int? ID)
         {
-            Contact model = _Contact.GetContact(ID);
+            ServiceRequester model = _ServiceRequester.GetServiceRequester(ID);
             return View(model);
         }
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirm(int? ID)
         {
-            _Contact.Remove(ID);
+            _ServiceRequester.Remove(ID);
             return RedirectToAction("Index");
         }
     }

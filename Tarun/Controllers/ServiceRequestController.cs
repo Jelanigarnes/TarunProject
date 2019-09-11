@@ -8,17 +8,18 @@ using Tarun.Services;
 
 namespace Tarun.Controllers
 {
-    public class ContactController : Controller
+    public class ServiceRequestController : Controller
     {
-        private readonly IContact _Contact;
 
-        public ContactController(IContact _IContact)
+        private readonly IServiceRequest _ServiceRequest;
+
+        public ServiceRequestController (IServiceRequest _IServiceRequest)
         {
-            _Contact = _IContact;
+            this._ServiceRequest = _IServiceRequest;
         }
         public IActionResult Index()
         {
-            return View(_Contact.GetContacts);
+            return View(_ServiceRequest.GetServiceRequests);
         }
         [HttpGet]
         public IActionResult Create()
@@ -26,12 +27,11 @@ namespace Tarun.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Contact model)
+        public IActionResult Create(ServiceRequest model)
         {
             if (ModelState.IsValid)
             {
-                _Contact.Add(model);
-                return RedirectToAction("Index");
+                _ServiceRequest.Add(model);
             }
             return View(model);
 
@@ -39,14 +39,15 @@ namespace Tarun.Controllers
         [HttpGet]
         public IActionResult Delete(int? ID)
         {
-            Contact model = _Contact.GetContact(ID);
+            ServiceRequest model = _ServiceRequest.GetServiceRequest(ID);
             return View(model);
         }
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirm(int? ID)
         {
-            _Contact.Remove(ID);
+            _ServiceRequest.Remove(ID);
             return RedirectToAction("Index");
         }
+
     }
 }

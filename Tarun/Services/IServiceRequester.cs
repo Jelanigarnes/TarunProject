@@ -9,7 +9,7 @@ namespace Tarun.Services
     public interface IServiceRequester
     {
         IEnumerable<ServiceRequester> GetServiceRequesters { get; }
-        ServiceRequester GetServiceRequest(int ID);
+        ServiceRequester GetServiceRequester(int? ID);
         void Add(ServiceRequester _ServiceRequester);
         void Remove(int? ID);
     }

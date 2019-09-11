@@ -29,7 +29,7 @@ namespace Tarun.Repository
             db.SaveChanges();
         }
 
-        public Report GetReport(int ID)
+        public Report GetReport(int? ID)
         {
             Report dbEntity = db.Reports.Find(ID);
             return dbEntity;

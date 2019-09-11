@@ -29,7 +29,7 @@ namespace Tarun.Repository
             db.SaveChanges();
         }
 
-        public ServiceRequester GetServiceRequest(int ID)
+        public ServiceRequester GetServiceRequest(int? ID)
         {
             ServiceRequester dbEntity = db.ServiceRequesters.Find(ID);
             return dbEntity;

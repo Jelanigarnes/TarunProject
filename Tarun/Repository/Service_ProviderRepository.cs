@@ -29,7 +29,7 @@ namespace Tarun.Repository
             db.SaveChanges();
         }
 
-        public Service_Provider GetService_Provider(int ID)
+        public Service_Provider GetService_Provider(int? ID)
         {
             Service_Provider dbEntity = db.Service_Providers.Find(ID);
             return dbEntity;

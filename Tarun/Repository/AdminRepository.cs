@@ -29,7 +29,7 @@ namespace Tarun.Repository
             db.SaveChanges();
         }
 
-        public Admin GetAdmin(int ID)
+        public Admin GetAdmin(int? ID)
         {
             Admin dbEntity = db.Admins.Find(ID);
             return dbEntity;

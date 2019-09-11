@@ -10,7 +10,7 @@ namespace Tarun.Services
     {
 
         IEnumerable<Report> GetReports{ get; }
-        Report GetReport(int ID);
+        Report GetReport(int? ID);
         void Add(Report _Report);
         void Remove(int? ID);
     }

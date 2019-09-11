@@ -13,6 +13,7 @@ using Tarun.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tarun.Repository;
+using Tarun.Services;
 
 namespace Tarun
 {
@@ -45,6 +46,13 @@ namespace Tarun
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddTransient<IContact, ContactRepository>();
+            services.AddTransient<IAdmin, AdminRepository>();
+            services.AddTransient<IReport, ReportRepository>();
+            services.AddTransient<IService, ServiceRepository>();
+            services.AddTransient<IService_Provider, Service_ProviderRepository>();
+            services.AddTransient<IServiceRequest, ServiceRequestRepository>();
+            services.AddTransient<IServiceRequester, ServiceRequesterRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

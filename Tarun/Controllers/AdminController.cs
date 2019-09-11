@@ -36,5 +36,17 @@ namespace Tarun.Controllers
             return View(model);
 
         }
+        [HttpGet]
+        public IActionResult Delete(int? ID)
+        {
+            Admin model = _Admin.GetAdmin(ID);
+            return View(model);
+        }
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirm(int? ID)
+        {
+            _Admin.Remove(ID);
+            return RedirectToAction("Index");
+        }
     }
 }

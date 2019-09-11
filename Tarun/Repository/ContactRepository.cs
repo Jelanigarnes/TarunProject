@@ -29,7 +29,7 @@ namespace Tarun.Repository
             db.SaveChanges();
         }
 
-        public Contact GetContact(int ID)
+        public Contact GetContact(int? ID)
         {
             Contact dbEntity = db.Contacts.Find(ID);
             return dbEntity;
