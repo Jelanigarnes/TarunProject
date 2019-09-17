@@ -8,16 +8,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Tarun.Controllers
 {
-    public class ServiceRequesterController : Controller
+    public class Service_RequesterController : Controller
     {
-        private readonly IServiceRequester _ServiceRequester;
-        public ServiceRequesterController(IServiceRequester _IServiceRequester)
+        private readonly IService_Requester _Service_Requester;
+        public Service_RequesterController(IService_Requester _IService_Requester)
         {
-             _ServiceRequester= _IServiceRequester;
+             _Service_Requester= _IService_Requester;
         }
         public IActionResult Index()
         {
-            return View(_ServiceRequester.GetServiceRequesters);
+            return View(_Service_Requester.GetService_Requesters);
         }
         [HttpGet]
         public IActionResult Create()
@@ -25,24 +25,24 @@ namespace Tarun.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(ServiceRequester model)
+        public IActionResult Create(Service_Requester model)
         {
             if (ModelState.IsValid)
             {
-                _ServiceRequester.Add(model);
+                _Service_Requester.Add(model);
             }
             return View(model);
         }
         [HttpGet]
         public IActionResult Delete(int? ID)
         {
-            ServiceRequester model = _ServiceRequester.GetServiceRequester(ID);
+            Service_Requester model = _Service_Requester.GetService_Requester(ID);
             return View(model);
         }
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirm(int? ID)
         {
-            _ServiceRequester.Remove(ID);
+            _Service_Requester.Remove(ID);
             return RedirectToAction("Index");
         }
     }

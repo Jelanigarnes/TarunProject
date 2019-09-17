@@ -52,7 +52,7 @@ namespace Tarun
             services.AddTransient<IService, ServiceRepository>();
             services.AddTransient<IService_Provider, Service_ProviderRepository>();
             services.AddTransient<IServiceRequest, ServiceRequestRepository>();
-            services.AddTransient<IServiceRequester, ServiceRequesterRepository>();
+            services.AddTransient<IService_Requester, Service_RequesterRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

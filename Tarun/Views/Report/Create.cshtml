@@ -13,19 +13,9 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="ReportTitle" class="control-label"></label>
-                <input asp-for="ReportTitle" class="form-control" />
-                <span asp-validation-for="ReportTitle" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="ServiceRequestID" class="control-label"></label>
                 <input asp-for="ServiceRequestID" class="form-control" />
                 <span asp-validation-for="ServiceRequestID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ServiceProviderID" class="control-label"></label>
-                <input asp-for="ServiceProviderID" class="form-control" />
-                <span asp-validation-for="ServiceProviderID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ServiceID" class="control-label"></label>
@@ -33,19 +23,19 @@
                 <span asp-validation-for="ServiceID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ServiceRequesterID" class="control-label"></label>
-                <input asp-for="ServiceRequesterID" class="form-control" />
-                <span asp-validation-for="ServiceRequesterID" class="text-danger"></span>
+                <label asp-for="Service_ProviderID" class="control-label"></label>
+                <input asp-for="Service_ProviderID" class="form-control" />
+                <span asp-validation-for="Service_ProviderID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Service_RequesterID" class="control-label"></label>
+                <input asp-for="Service_RequesterID" class="form-control" />
+                <span asp-validation-for="Service_RequesterID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CreationTimeStamp" class="control-label"></label>
                 <input asp-for="CreationTimeStamp" class="form-control" />
                 <span asp-validation-for="CreationTimeStamp" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedBy" class="control-label"></label>
-                <input asp-for="CreatedBy" class="form-control" />
-                <span asp-validation-for="CreatedBy" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

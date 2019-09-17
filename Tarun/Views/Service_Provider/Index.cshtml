@@ -22,13 +22,13 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LoginID)
+                @Html.DisplayNameFor(model => model.Phone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreationTimeStamp)
+                @Html.DisplayNameFor(model => model.Password)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreatedBy)
+                @Html.DisplayNameFor(model => model.ConfirmPassword)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ModifiedTimeStamp)
@@ -38,9 +38,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServiceRequesterID)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ServiceRequestID)
@@ -61,13 +58,13 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LoginID)
+                @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreationTimeStamp)
+                @Html.DisplayFor(modelItem => item.Password)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedBy)
+                @Html.DisplayFor(modelItem => item.ConfirmPassword)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ModifiedTimeStamp)
@@ -79,15 +76,12 @@
                 @Html.DisplayFor(modelItem => item.Image)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ServiceRequesterID)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.ServiceRequestID)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ServiceProviderID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ServiceProviderID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ServiceProviderID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Service_ProviderID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Service_ProviderID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Service_ProviderID">Delete</a>
             </td>
         </tr>
 }

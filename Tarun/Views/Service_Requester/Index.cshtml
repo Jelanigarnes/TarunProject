@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Tarun.Models.ServiceRequester>
+﻿@model IEnumerable<Tarun.Models.Service_Requester>
 
 @{
     ViewData["Title"] = "Index";
@@ -25,10 +25,10 @@
                 @Html.DisplayNameFor(model => model.Phone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LoginID)
+                @Html.DisplayNameFor(model => model.Password)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Password)
+                @Html.DisplayNameFor(model => model.ConfirmPassword)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CreationTimeStamp)
@@ -64,10 +64,10 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LoginID)
+                @Html.DisplayFor(modelItem => item.Password)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Password)
+                @Html.DisplayFor(modelItem => item.ConfirmPassword)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreationTimeStamp)
@@ -85,9 +85,9 @@
                 @Html.DisplayFor(modelItem => item.Image)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ServiceRequesterID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ServiceRequesterID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ServiceRequesterID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Service_RequesterID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Service_RequesterID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Service_RequesterID">Delete</a>
             </td>
         </tr>
 }
