@@ -9,7 +9,7 @@ namespace Tarun.Models
 {
     public enum Status
         {
-          Open,closed,cancel,accept
+          Open,closed,assigned
         }
     public class ServiceRequest
     {

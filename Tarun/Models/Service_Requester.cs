@@ -24,12 +24,6 @@ namespace Tarun.Models
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
 
-        [DisplayName("Creation Time Stamp")]
-        public DateTime CreationTimeStamp { get; set; }
-
-        [DisplayName("Created By")]
-        public string CreatedBy { get; set; }
-
         [DisplayName("Modified Time Stamp")]
         public DateTime ModifiedTimeStamp { get; set; }
 
