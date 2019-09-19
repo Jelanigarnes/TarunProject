@@ -16,6 +16,9 @@
                 @Html.DisplayNameFor(model => model.ServiceName)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.ServiceDescription)
             </th>
             <th>
@@ -32,6 +35,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ServiceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ServiceDescription)

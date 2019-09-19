@@ -19,7 +19,7 @@ namespace Tarun.Repository
         public DbSet<Service> Services { get; set; }
         public DbSet<Service_Provider> Service_Providers { get; set; }
         public DbSet<ServiceRequest> ServiceRequests { get; set; }
-        public DbSet<ServiceRequester> ServiceRequesters{ get;set; }
+        public DbSet<Service_Requester> Service_Requesters{ get;set; }
 
     }
 }

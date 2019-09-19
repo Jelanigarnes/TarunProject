@@ -1,4 +1,4 @@
-﻿@model Tarun.Models.Service_Provider
+﻿@model Tarun.Models.Service_Requester
 
 @{
     ViewData["Title"] = "Delete";
@@ -8,7 +8,7 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Service_Provider</h4>
+    <h4>Service_Requester</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -65,16 +65,10 @@
         <dd>
             @Html.DisplayFor(model => model.Image)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ServiceRequestID)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ServiceRequestID)
-        </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="Service_ProviderID" />
+        <input type="hidden" asp-for="Service_RequesterID" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-action="Index">Back to List</a>
     </form>
