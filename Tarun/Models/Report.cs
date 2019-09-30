@@ -18,14 +18,17 @@ namespace Tarun.Models
         [DisplayName("Service")]
         public int ServiceID { get; set; }
 
-        [DisplayName("Service Provide")]
+        [DisplayName("Service Provider")]
         public int Service_ProviderID { get; set; }
 
         [DisplayName("Service Requester")]
         public int Service_RequesterID { get; set; }
 
-        [DisplayName("Creation Time Stamp")]
-        public DateTime CreationTimeStamp { get; set; }
-        
+        [DisplayName("Gender")]
+        public int GenderID { get; set; }
+
+        [DisplayName("Contact")]
+        public int ContactID { get; set; }
+
     }
 }

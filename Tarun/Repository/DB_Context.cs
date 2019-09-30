@@ -20,6 +20,7 @@ namespace Tarun.Repository
         public DbSet<Service_Provider> Service_Providers { get; set; }
         public DbSet<ServiceRequest> ServiceRequests { get; set; }
         public DbSet<Service_Requester> Service_Requesters{ get;set; }
+        public DbSet<Gender> Genders { get; set; }
 
     }
 }

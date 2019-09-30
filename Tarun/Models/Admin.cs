@@ -20,11 +20,14 @@ namespace Tarun.Models
         [Required(ErrorMessage = "Last Name is Required")]
         public string AdminLastName { get; set; }
 
-        [Required(ErrorMessage = "Password is Required")]
-        public string Password { get; set; }
+        [DisplayName("Admin Phone Number")] 
+        public string AdminPhoneNumber { get; set; }
 
         [Required(ErrorMessage = "Email is Required")]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "Password is Required")]
+        public string Password { get; set; }
 
         [DisplayName("Report")]
         public int ReportID { get; set; }
@@ -42,5 +45,7 @@ namespace Tarun.Models
         public int Service_RequesterID { get; set; }
         [DisplayName("Service Provider")]
         public int Service_ProviderID { get; set; }
+
+        public int GenderID { get; set; }
     }
 }

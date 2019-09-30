@@ -21,8 +21,6 @@ namespace Tarun.Models
         [DisplayName("Service")]
         public int ServiceID { get; set; }
 
-        public string Service { get; set; }
-
         [DisplayName("Service Date")]
         public DateTime ServiceDate { get; set; }
         [DisplayName("Service Start Time")]
@@ -33,8 +31,6 @@ namespace Tarun.Models
         public string Street { get; set; }
         [DisplayName("Apartment/House")]
         public string APT_House { get; set; }
-        public string Location { get; set; }
-        
         public Status? Status { get;set; }
     }
 }

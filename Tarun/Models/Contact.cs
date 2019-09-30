@@ -13,7 +13,7 @@ namespace Tarun.Models
     }
     public class Contact
     {
-       [Key]
+        [Key]
         public int ContactID { get; set; }
         [Required(ErrorMessage = "Street is Required")]
         public string Street { get; set; }
@@ -38,6 +38,11 @@ namespace Tarun.Models
         [Required(ErrorMessage = "Country is Required")]
         public string Country { get; set; }
 
-        
+        [DisplayName("First Name")]
+        [Required(ErrorMessage = "First name is Required")]
+        public string ContactFirstName{get;set;}
+        [DisplayName("Last Name")]
+        [Required(ErrorMessage = "Last name is Required")]
+        public string ContactLastName { get; set; }
     }
 }
