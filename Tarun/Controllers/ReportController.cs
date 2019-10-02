@@ -16,22 +16,16 @@ namespace Tarun.Controllers
         {
             _Report = _IReport;
         }
-        public async Task<IActionResult> Index(string searchString)
+        public IActionResult Index()
         {
-            var reports = from r in _Report.GetReports
-                          select r;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                reports = reports.Where(s => s.ServiceRequestID.Contains(searchString));
-            }
-            return View(await reports.ToListAsync());
+            return View(_Report.GetReports);
             //return View(_Report.GetReports);
         }
-        [HttpPost]
-        public string Index(string searchString, bool notUsed)
+        //[HttpPost]
+        /*public string Index(string searchString, bool notUsed)
         {
             return "From [HttpPost]Index: filter on " + searchString;
-        }
+        }*/
 
         [HttpGet]
         public IActionResult Create()

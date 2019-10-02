@@ -29,8 +29,8 @@ namespace Tarun
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DB_Context>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("ConnectionStr")));
+            //services.AddDbContext<ApplicationDbContext>(options =>
+           // options.UseSqlServer(Configuration.GetConnectionString("ConnectionStr")));
 
             services.Configure<CookiePolicyOptions>(options =>
             {
