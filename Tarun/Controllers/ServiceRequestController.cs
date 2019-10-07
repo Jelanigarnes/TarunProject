@@ -12,10 +12,14 @@ namespace Tarun.Controllers
     {
 
         private readonly IServiceRequest _ServiceRequest;
+        private readonly IService _Service;
+        private readonly IService_Requester _Service_Requester;
 
-        public ServiceRequestController (IServiceRequest _IServiceRequest)
+        public ServiceRequestController (IServiceRequest _IServiceRequest, IService _IService, IService_Requester _IService_Requester)
         {
-            this._ServiceRequest = _IServiceRequest;
+            _ServiceRequest = _IServiceRequest;
+            _Service = _IService;
+            _Service_Requester = _IService_Requester;
         }
         public IActionResult Index()
         {
@@ -24,6 +28,8 @@ namespace Tarun.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.Services = _Service.GetServices;
+            ViewBag.Service_Requesters = _Service_Requester.GetService_Requesters;
             return View();
         }
         [HttpPost]
@@ -32,6 +38,7 @@ namespace Tarun.Controllers
             if (ModelState.IsValid)
             {
                 _ServiceRequest.Add(model);
+                return RedirectToAction("Index");
             }
             return View(model);
 

@@ -32,5 +32,8 @@ namespace Tarun.Models
         [DisplayName("Apartment/House")]
         public string APT_House { get; set; }
         public Status? Status { get;set; }
+
+        public Service_Requester Service_Requester { get; set; }
+        public Service Service { get; set; }
     }
 }

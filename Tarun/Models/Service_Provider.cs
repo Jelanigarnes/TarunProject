@@ -24,10 +24,14 @@ namespace Tarun.Models
         public string Phone { get; set; }
 
         [DisplayName("Gender")]
+        [Required(ErrorMessage = "Gender is Required")]
         public int GenderID { get; set; }
+        public Gender Genders { get; set; }
 
         [DisplayName("Services")]
         public int ServiceID { get; set; }
+
+        public Service Services { get; set; }
 
 
         [Required(ErrorMessage = "Password is Required")]
@@ -40,6 +44,7 @@ namespace Tarun.Models
         
         [DisplayName("Service Request")]
         public int ServiceRequestID { get; set; }
+        public ServiceRequest ServiceRequester;
     }
 
 

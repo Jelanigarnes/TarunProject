@@ -4,67 +4,218 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-<h4>Service_Provider</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GenderID" class="control-label"></label>
-                <input asp-for="GenderID" class="form-control" />
-                <span asp-validation-for="GenderID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ServiceID" class="control-label"></label>
-                <input asp-for="ServiceID" class="form-control" />
-                <span asp-validation-for="ServiceID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ServiceRequestID" class="control-label"></label>
-                <input asp-for="ServiceRequestID" class="form-control" />
-                <span asp-validation-for="ServiceRequestID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
+
+<link href="~/css/Style11.css" rel="stylesheet" />
+<body>
+
+    <div class="container">
+        <h1>Membership Registration</h1>
+        <h2>Service Provider</h2>
+        <h2>Please Complete All The Fields Below:</h2>
+
+        <!-- Displays the error messages -->
+        <div class="jumbotron">
+            <div id="errorDisplay"></div>
+
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label" id="lblFirstName" name="First Name"><asterisk>*</asterisk>First Name</label>
+                    <input asp-for="FirstName" class="form-control" id="firstName" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label" id="lblLastName"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+
+                <label for="address" id="lblAddress">Address:</label>
+                <input type="text" id="address">
+
+                <label for="city" id="lblCity">City:</label>
+                <input type="text" id="city">
+
+                <label for="postalCode" id="lblpostalCode">Postal Code:</label>
+                <input type="text" id="postalCode" placeholder="A0A0A0">
+
+                <label for="province" id="lblProvince">Province:</label>
+                <select id="province">
+                    <option value="ON">ON</option>
+                    <option value="QC">QC</option>
+                    <option value="MN">MN</option>
+                    <option value="SK">SK</option>
+                    <option value="AB">AB</option>
+                    <option value="BC">BC</option>
+                </select>
+
+                <label for="age" id="lblAge">Age:</label>
+                <input type="text" id="age">
+
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label" id="lblEmail"></label>
+                    <input asp-for="Email" class="form-control" id="email" placeholder="anonymous@gmail.com" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone" class="control-label"></label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="GenderID" class="control-label"></label>
+                    <select asp-for="GenderID" class="form-control"
+                            asp-items="@(new SelectList(ViewBag.Genders,"GenderID","GenderName"))">
+                    </select>
+                    <span asp-validation-for="GenderID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ServiceID" class="control-label"></label>
+                    <select asp-for="ServiceID" class="form-control"
+                            asp-items="@(new SelectList(ViewBag.Services,"ServiceID","ServiceName"))">
+                    </select>
+                    <span asp-validation-for="ServiceID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword" class="control-label"></label>
+                    <input asp-for="ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ServiceRequestID" class="control-label"></label>
+                    <select asp-for="ServiceRequestID" class="form-control"
+                            asp-items="@(new SelectList(ViewBag.ServiceRequests,"ServiceRequestID","Service"))">
+                    </select>
+                    <span asp-validation-for="ServiceRequestID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <!-- Footer -->
+    <footer class="page-footer font-small">
 
+        <div id="social-networks">
+            <div class="container">
+
+                <!-- Grid row-->
+                <div class="row py-4 d-flex align-items-center">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        <h6 class="mb-0">Get connected with me on social networks!</h6>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                        <!-- Facebook -->
+                        <a class="fb-ic" href="http://facebook.com/asaddc95">
+                            <i class="fab fa-facebook-f white-text mr-4"> </i>
+                        </a>
+                        <!--Linkedin -->
+                        <a class="li-ic" href="https://www.linkedin.com/in/asad-mahmood-5365829b/">
+                            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic" href="https://www.instagram.com/asaddc/">
+                            <i class="fab fa-instagram white-text"> </i>
+                        </a>
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row-->
+
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+
+            <!-- Grid row -->
+            <div class="row mt-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                    <!-- Content -->
+                    <h6 class="text-uppercase font-weight-bold">Any Questions?</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 140px;">
+                    <p>
+                        If you have any questions or wish to talk about anything, please give me a call, or an email and
+                        we can set
+                        something up!
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Projects</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;">
+                    <p>
+                        <a href="Services.html">Services</a>
+                    </p>
+                    <p>
+                        <a href="Service Request/index.html">Service Request</a>
+                    </p>
+                    <p>
+                        <a href="Match Request/index.html">Match Request</a>
+                    </p>
+                    <p>
+                        <a href="Registration/index.html">Registration</a>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" id="contact">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 78px;">
+                    <p>
+                        <i class="fas fa-home mr-3"></i> Scarborough, Ontario
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope mr-3"></i> <a href="mailto:blessjiboye@yahoo.com"> Email Blessing!</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone mr-3"></i> (647) 706-8279
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+
+        <div class="footer-copyright text-center py-3">
+            2019: Tarun Consulting
+        </div>
+
+
+    </footer>
+    <script src="~/js/membership.js"></script>
+
+</body>
+
+</html>

@@ -4,80 +4,248 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> - Tarun6</title>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GenderID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServiceID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Password)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ConfirmPassword)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServiceRequestID)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GenderID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServiceID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConfirmPassword)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServiceRequestID)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Service_ProviderID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Service_ProviderID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Service_ProviderID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+
+
+
+
+    <link href="~/css/Style11.css" rel="stylesheet" />
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Tarun6</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Home/About">About</a></li>
+                    <!--<li><a href="/Home/Admin">Admin</a></li>-->
+                    <!--<li><a href="/Home/Contact">Contact</a></li>-->
+                    <!--<li><a href="/Home/ServiceRequest">Service Request</a></li>-->
+                    <!--<li><a href="/Home/MyServiceP">My Services</a></li>-->
+                    <!--<li><a href="/Home/MyAccount">My Account</a></li>-->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Home/ServiceP">View Account</a></li>
+                            <li><a href="/Home/ServicePUpdate">Update Account</a></li>
+                            <li><a href="IDeactivate">Deactivate Account</a></li>
+                            <!--<li><a href="/Home/index">Log out</a></li>-->
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <input type="text" placeholder="Search..">
+                </ul>
+
+            </div>
+    </nav>
+</head>
+
+<br>
+<br>
+<br>
+<div class="container">
+
+    <!-- Displays the error messages -->
+    <div class="jumbotron">
+        <div id="errorDisplay"></div>
+
+        <body>
+            <h2>Available Services</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Service Name</th>
+                        <th scope="col">Postal Code</th>
+                        <th scope="col">Service Date</th>
+                        <th scope="col">Start Time</th>
+                        <th scope="col">End Time</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Hourly Rate</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Tutoring grade 3 boy, Cleaning,shopping</td>
+                        <td></td>
+                        <td></td>
+
+                        <td><a href="/#"/ style="cursor:pointer">Action</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Peace</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Tutoring grade 3 boy</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="/#"/ style="cursor:pointer">Action</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Joy</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Shopping</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="/#"/ style="cursor:pointer">Action</td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <!-- Footer -->
+            <footer class="page-footer font-small">
+
+                <div id="social-networks">
+                    <div class="container">
+
+                        <!-- Grid row-->
+                        <div class="row py-4 d-flex align-items-center">
+
+                            <!-- Grid column -->
+                            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                                <h6 class="mb-0">Get connected with me on social networks!</h6>
+                            </div>
+                            <!-- Grid column -->
+                            <!-- Grid column -->
+                            <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                                <!-- Facebook -->
+                                <a class="fb-ic" href="http://facebook.com/asaddc95">
+                                    <i class="fab fa-facebook-f white-text mr-4"> </i>
+                                </a>
+                                <!--Linkedin -->
+                                <a class="li-ic" href="https://www.linkedin.com/in/asad-mahmood-5365829b/">
+                                    <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                                </a>
+                                <!--Instagram-->
+                                <a class="ins-ic" href="https://www.instagram.com/asaddc/">
+                                    <i class="fab fa-instagram white-text"> </i>
+                                </a>
+
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row-->
+
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="container text-center text-md-left mt-5">
+
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                            <!-- Content -->
+                            <h6 class="text-uppercase font-weight-bold">Any Questions?</h6>
+                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 140px;">
+                            <p>
+                                If you have any questions or wish to talk about anything, please give me a call, or an email and
+                                we can set
+                                something up!
+                            </p>
+
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-bold">Projects</h6>
+                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;">
+                            <p>
+                                <a href="Services.html">Services</a>
+                            </p>
+                            <p>
+                                <a href="Service Request/index.html">Service Request</a>
+                            </p>
+                            <p>
+                                <a href="Match Request/index.html">Match Request</a>
+                            </p>
+                            <p>
+                                <a href="Registration/index.html">Registration</a>
+                            </p>
+
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" id="contact">
+
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 78px;">
+                            <p>
+                                <i class="fas fa-home mr-3"></i> Scarborough, Ontario
+                            </p>
+                            <p>
+                                <i class="fas fa-envelope mr-3"></i> <a href="mailto:blessjiboye@yahoo.com"> Email Blessing!</a>
+                            </p>
+                            <p>
+                                <i class="fas fa-phone mr-3"></i> (647) 706-8279
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+                </div>
+                <!-- Footer Links -->
+
+
+                <div class="footer-copyright text-center py-3">
+                    2019: Tarun Consulting
+                </div>
+
+
+            </footer>
+            <!--<script src="~/js/membership.js"></script>-->
+
+        </body>
+
+</html>
