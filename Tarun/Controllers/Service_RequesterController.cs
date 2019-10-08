@@ -33,6 +33,7 @@ namespace Tarun.Controllers
             if (ModelState.IsValid)
             {
                 _Service_Requester.Add(model);
+                return RedirectToAction("Create", "Contact");
             }
             return View(model);
         }

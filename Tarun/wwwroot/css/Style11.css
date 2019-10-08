@@ -52,3 +52,8 @@ menu li {
     menu li:last-of-type::after {
         content: "";
     }
+
+.input-validation-error {
+    border: 1px solid #ff0000 !important;
+    background-color: #FF0000;
+}

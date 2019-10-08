@@ -11,12 +11,10 @@
 
     <div class="container">
         <h1>Membership Registration</h1>
-        <h2>Service Provider</h2>
-        <h2>Please Complete All The Fields Below:</h2>
+        <h3>Service Provider</h3>
+        <h3>Please Complete All The Fields Below:</h3>
 
-        <!-- Displays the error messages -->
         <div class="jumbotron">
-            <div id="errorDisplay"></div>
 
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -74,118 +72,109 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="page-footer font-small">
+        <!-- Footer -->
+        <footer class="page-footer font-small">
 
-        <div id="social-networks">
-            <div class="container">
+            <div id="social-networks">
+                <div class="container">
 
-                <!-- Grid row-->
-                <div class="row py-4 d-flex align-items-center">
+                    <!-- Grid row-->
+                    <div class="row py-4 d-flex align-items-center">
+
+                        <!-- Grid column -->
+                        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                            <h6 class="mb-0">Get connected with me on social networks!</h6>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                            <!-- Facebook -->
+                            <a class="fb-ic" href="http://facebook.com/asaddc95">
+                                <i class="fab fa-facebook-f white-text mr-4"> </i>
+                            </a>
+                            <!--Linkedin -->
+                            <a class="li-ic" href="https://www.linkedin.com/in/asad-mahmood-5365829b/">
+                                <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                            </a>
+                            <!--Instagram-->
+                            <a class="ins-ic" href="https://www.instagram.com/asaddc/">
+                                <i class="fab fa-instagram white-text"> </i>
+                            </a>
+
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row-->
+
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left mt-5">
+
+                <!-- Grid row -->
+                <div class="row mt-3">
 
                     <!-- Grid column -->
-                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                        <h6 class="mb-0">Get connected with me on social networks!</h6>
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                        <!-- Content -->
+                        <h6 class="text-uppercase font-weight-bold">Any Questions?</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 140px;">
+                        <p>
+                            If you have any questions or wish to talk about anything, please give me a call, or an email and
+                            we can set
+                            something up!
+                        </p>
+
                     </div>
                     <!-- Grid column -->
                     <!-- Grid column -->
-                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
-                        <!-- Facebook -->
-                        <a class="fb-ic" href="http://facebook.com/asaddc95">
-                            <i class="fab fa-facebook-f white-text mr-4"> </i>
-                        </a>
-                        <!--Linkedin -->
-                        <a class="li-ic" href="https://www.linkedin.com/in/asad-mahmood-5365829b/">
-                            <i class="fab fa-linkedin-in white-text mr-4"> </i>
-                        </a>
-                        <!--Instagram-->
-                        <a class="ins-ic" href="https://www.instagram.com/asaddc/">
-                            <i class="fab fa-instagram white-text"> </i>
-                        </a>
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Have you Registered?</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;">
+                        <p>
+                            <a href="Identity/Account/Register">Register</a>
+                        </p>
 
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" id="contact">
+
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 78px;">
+                        <p>
+                            <i class="fas fa-home mr-3"></i> Scarborough, Ontario
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope mr-3"></i> <a href="mailto:blessjiboye@yahoo.com"> Email Blessing!</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone mr-3"></i> (647) 706-8279
+                        </p>
                     </div>
                     <!-- Grid column -->
 
                 </div>
-                <!-- Grid row-->
+                <!-- Grid row -->
 
             </div>
-        </div>
+            <!-- Footer Links -->
 
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left mt-5">
 
-            <!-- Grid row -->
-            <div class="row mt-3">
-
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
-                    <!-- Content -->
-                    <h6 class="text-uppercase font-weight-bold">Any Questions?</h6>
-                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 140px;">
-                    <p>
-                        If you have any questions or wish to talk about anything, please give me a call, or an email and
-                        we can set
-                        something up!
-                    </p>
-
-                </div>
-                <!-- Grid column -->
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-                    <!-- Links -->
-                    <h6 class="text-uppercase font-weight-bold">Projects</h6>
-                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;">
-                    <p>
-                        <a href="Services.html">Services</a>
-                    </p>
-                    <p>
-                        <a href="Service Request/index.html">Service Request</a>
-                    </p>
-                    <p>
-                        <a href="Match Request/index.html">Match Request</a>
-                    </p>
-                    <p>
-                        <a href="Registration/index.html">Registration</a>
-                    </p>
-
-                </div>
-                <!-- Grid column -->
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" id="contact">
-
-                    <!-- Links -->
-                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 78px;">
-                    <p>
-                        <i class="fas fa-home mr-3"></i> Scarborough, Ontario
-                    </p>
-                    <p>
-                        <i class="fas fa-envelope mr-3"></i> <a href="mailto:blessjiboye@yahoo.com"> Email Blessing!</a>
-                    </p>
-                    <p>
-                        <i class="fas fa-phone mr-3"></i> (647) 706-8279
-                    </p>
-                </div>
-                <!-- Grid column -->
-
+            <div class="footer-copyright text-center py-3">
+                2019: Tarun Consulting
             </div>
-            <!-- Grid row -->
-
-        </div>
-        <!-- Footer Links -->
 
 
-        <div class="footer-copyright text-center py-3">
-            2019: Tarun Consulting
-        </div>
-
-
-    </footer>
-    <script src="~/js/membership.js"></script>
+        </footer>
+        <script src="~/js/membership.js"></script>
 
 </body>
 

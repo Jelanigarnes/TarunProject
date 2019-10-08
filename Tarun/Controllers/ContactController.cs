@@ -31,7 +31,7 @@ namespace Tarun.Controllers
             if (ModelState.IsValid)
             {
                 _Contact.Add(model);
-                return RedirectToAction("Service_Provider");
+                return RedirectToAction("Index","Home");
             }
             return View(model);
 
