@@ -9,130 +9,84 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> - Tarun6</title>
+    <title> - Tarun</title>
 
-
+</head>
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/site.css" />
-
-
-
-
     <link href="~/css/Style11.css" rel="stylesheet" />
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">Tarun6</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/Home/About">About</a></li>
-                    <!--<li><a href="/Home/Admin">Admin</a></li>-->
-                    <!--<li><a href="/Home/Contact">Contact</a></li>-->
-                    <!--<li><a href="/Home/ServiceRequest">Service Request</a></li>-->
-                    <!--<li><a href="/Home/MyServiceP">My Services</a></li>-->
-                    <!--<li><a href="/Home/MyAccount">My Account</a></li>-->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/Home/ServiceP">View Account</a></li>
-                            <li><a href="/Home/ServicePUpdate">Update Account</a></li>
-                            <li><a href="IDeactivate">Deactivate Account</a></li>
-                            <!--<li><a href="/Home/index">Log out</a></li>-->
-                        </ul>
-                    </li>
-                </ul>
-
-            </div>
-
-            <div>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <input type="text" placeholder="Search..">
-                </ul>
-
-            </div>
-    </nav>
-</head>
-
-<br>
-<br>
-<br>
-<div class="container">
-
-    <!-- Displays the error messages -->
+ 
     <div class="jumbotron">
         <div id="errorDisplay"></div>
-
         <body>
-            <h2>Available Services</h2>
-            <table class="table table-striped">
+            <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">City</th>
-                        <th scope="col">Service Name</th>
-                        <th scope="col">Postal Code</th>
-                        <th scope="col">Service Date</th>
-                        <th scope="col">Start Time</th>
-                        <th scope="col">End Time</th>
-                        <th scope="col">Duration</th>
-                        <th scope="col">Hourly Rate</th>
-                        <th scope="col">Action</th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LastName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Phone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GenderID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ServiceID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Password)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ConfirmPassword)
+                        </th>                    
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Tutoring grade 3 boy, Cleaning,shopping</td>
-                        <td></td>
-                        <td></td>
-
-                        <td><a href="/#"/ style="cursor:pointer">Action</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Peace</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Tutoring grade 3 boy</td>
-                        <td></td>
-                        <td></td>
-                        <td><a href="/#"/ style="cursor:pointer">Action</td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Joy</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Shopping</td>
-                        <td></td>
-                        <td></td>
-                        <td><a href="/#"/ style="cursor:pointer">Action</td>
-
-                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FirstName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GenderID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ServiceID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Password)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ConfirmPassword)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Service_ProviderID">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.Service_ProviderID">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.Service_ProviderID">Delete</a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
-
-
             <!-- Footer -->
             <footer class="page-footer font-small">
 

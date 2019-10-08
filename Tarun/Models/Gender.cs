@@ -13,6 +13,7 @@ namespace Tarun.Models
         public int GenderID { get; set; }
 
         [DisplayName("Gender Name")]
+        [Required(ErrorMessage ="Gender Selection Required")]
         public string GenderName { get; set; }
     }
 }

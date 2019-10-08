@@ -5,10 +5,8 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
-
-
 <link href="~/css/Style11.css" rel="stylesheet" />
+<html lang="en">
 <body>
 
     <div class="container">
@@ -32,26 +30,6 @@
                     <input asp-for="LastName" class="form-control" />
                     <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
-
-                <label for="address" id="lblAddress">Address:</label>
-                <input type="text" id="address">
-
-                <label for="city" id="lblCity">City:</label>
-                <input type="text" id="city">
-
-                <label for="postalCode" id="lblpostalCode">Postal Code:</label>
-                <input type="text" id="postalCode" placeholder="A0A0A0">
-
-                <label for="province" id="lblProvince">Province:</label>
-                <select id="province">
-                    <option value="ON">ON</option>
-                    <option value="QC">QC</option>
-                    <option value="MN">MN</option>
-                    <option value="SK">SK</option>
-                    <option value="AB">AB</option>
-                    <option value="BC">BC</option>
-                </select>
-
                 <label for="age" id="lblAge">Age:</label>
                 <input type="text" id="age">
 
@@ -90,14 +68,7 @@
                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="ServiceRequestID" class="control-label"></label>
-                    <select asp-for="ServiceRequestID" class="form-control"
-                            asp-items="@(new SelectList(ViewBag.ServiceRequests,"ServiceRequestID","Service"))">
-                    </select>
-                    <span asp-validation-for="ServiceRequestID" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                    <input type="submit" value="Next" class="btn btn-default" />
                 </div>
             </form>
         </div>

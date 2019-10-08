@@ -42,9 +42,7 @@ namespace Tarun.Models
         public string ConfirmPassword { get; set; }
      
         
-        [DisplayName("Service Request")]
-        public int ServiceRequestID { get; set; }
-        public ServiceRequest ServiceRequester;
+        
     }
 
 
