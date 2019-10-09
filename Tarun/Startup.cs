@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tarun.Repository;
 using Tarun.Services;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace Tarun
 {
@@ -42,8 +43,31 @@ namespace Tarun
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("ConnectionStr")));
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                // services.AddDefaultIdentity<IdentityUser>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddRazorPagesOptions(options =>
+            {
+            options.AllowAreas = true;
+                options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
+                options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
+            });
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = $"/Identity/Account/Login";
+                options.LogoutPath = $"/Identity/Account/Logout";
+                options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+            });
+
+            // using Microsoft.AspNetCore.Identity.UI.Services;
+            services.AddSingleton<IEmailSender, EmailSender>();
+
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddTransient<IContact, ContactRepository>();
@@ -73,9 +97,10 @@ namespace Tarun
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseMvcWithDefaultRoute();
             app.UseAuthentication();
-
+            
+         
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
