@@ -13,13 +13,14 @@ namespace Tarun.Controllers
         private readonly IService_Provider _ServiceProvider;
         private readonly IGender _Gender;
         private readonly IService _Service;
+        private readonly IServiceRequest _ServiceRequest;
        
-        public Service_ProviderController(IService_Provider _IserviceProvider , IGender _IGender , IService _IService)
+        public Service_ProviderController(IService_Provider _IserviceProvider , IGender _IGender , IService _IService,IServiceRequest _IServiceRequest)
         {
             _ServiceProvider = _IserviceProvider;
             _Gender = _IGender;
             _Service = _IService;
-            
+            _ServiceRequest = _IServiceRequest;
         }
 
         public IActionResult Index()
@@ -57,6 +58,10 @@ namespace Tarun.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult MatchRequest(int? ID)
+        {
+            return View(_ServiceRequest.GetServiceRequests);
+        }
 
     }
 }
