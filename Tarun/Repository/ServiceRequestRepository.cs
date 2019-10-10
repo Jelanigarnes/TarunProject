@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace Tarun.Repository
         {
             db = _db;
         }
-        public IEnumerable<ServiceRequest> GetServiceRequests => db.ServiceRequests;
+        public IEnumerable<ServiceRequest> GetServiceRequests => db.ServiceRequests.Include(s => s.Service);
 
         public void Add(ServiceRequest _ServiceRequest)
         {

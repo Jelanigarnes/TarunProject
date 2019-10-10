@@ -28,8 +28,9 @@ namespace Tarun.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            ViewBag.Services = _Service.GetServices;
             ViewBag.Service_Requesters = _Service_Requester.GetService_Requesters;
+            ViewBag.Services = _Service.GetServices;
+            
             return View();
         }
         [HttpPost]

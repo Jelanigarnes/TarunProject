@@ -9,20 +9,21 @@ namespace Tarun.Models
 {
     public enum Status
         {
-          Open,closed,assigned
+          Open,closed,assigned,Cancel
         }
     public class ServiceRequest
     {
         [Key]
         public int ServiceRequestID { get; set; }
+
         [DisplayName("Service Requester")]
         public int Service_RequesterID { get; set; }
+        public Service_Requester Service_Requester { get; set; }
 
         [DisplayName("Service")]
         public int ServiceID { get; set; }
+        public Service Service { get; set; }
 
-        [DisplayName("Service Date")]
-        public DateTime ServiceDate { get; set; }
         [DisplayName("Service Start Time")]
         public DateTime SRStartTime { get; set; }
         [DisplayName("Service End Time")]
@@ -33,7 +34,7 @@ namespace Tarun.Models
         public string APT_House { get; set; }
         public Status? Status { get;set; }
 
-        public Service_Requester Service_Requester { get; set; }
-        public Service Service { get; set; }
+       
+       
     }
 }

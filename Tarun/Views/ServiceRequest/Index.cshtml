@@ -4,16 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>My Services</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New Service Request</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ServiceDate)
+                @Html.DisplayNameFor(model => model.Service_Requester)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Service)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.SRStartTime)
@@ -33,12 +36,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Status)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Service_Requester)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Service)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -46,7 +43,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ServiceDate)
+                @Html.DisplayFor(modelItem => item.Service_Requester.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Service.ServiceName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SRStartTime)
@@ -65,12 +65,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Service_Requester.Service_RequesterID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Service.Rate)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ServiceRequestID">Edit</a> |
