@@ -20,6 +20,7 @@ namespace Tarun.Models
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Email is Required")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
 
@@ -38,10 +39,12 @@ namespace Tarun.Models
 
 
         [Required(ErrorMessage = "Password is Required")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [DisplayName("Confirm Password")]
         [Required(ErrorMessage = "Confirm Password is Required")]
+        [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
      
         

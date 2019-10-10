@@ -17,14 +17,20 @@ namespace Tarun.Models
 
         [DisplayName("Last Name")]
         public string LastName { get; set; }
-      
+        [Required(ErrorMessage = "Email is Required")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         public string Phone { get; set; }
 
         [DisplayName("Gender")]
         public int GenderID { get; set; }
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "Password is Required")]
         public string Password { get; set; }
+        [DataType(DataType.Password)]
+        [DisplayName("Confirm Password")]
+        [Required(ErrorMessage = "Confirm Password is Required")]
         public string ConfirmPassword { get; set; }
           
         
