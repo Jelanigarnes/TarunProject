@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tarun.Data;
 using Tarun.Models;
 using Tarun.Services;
 
@@ -9,8 +10,8 @@ namespace Tarun.Repository
 {
     public class AdminRepository : IAdmin
     {
-        private DB_Context db;
-        public AdminRepository(DB_Context _db)
+        private ApplicationDbContext db;
+        public AdminRepository(ApplicationDbContext _db)
         {
             db = _db;
         }

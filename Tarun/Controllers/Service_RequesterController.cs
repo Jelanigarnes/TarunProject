@@ -11,9 +11,11 @@ namespace Tarun.Controllers
     public class Service_RequesterController : Controller
     {
         private readonly IService_Requester _Service_Requester;
-        public Service_RequesterController(IService_Requester _IService_Requester)
+        private readonly IGender _Gender;
+        public Service_RequesterController(IService_Requester _IService_Requester, IGender _IGender)
         {
              _Service_Requester= _IService_Requester;
+            _Gender = _IGender;
         }
         public IActionResult Index()
         {
@@ -22,6 +24,7 @@ namespace Tarun.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.Genders = _Gender.GetGenders;
             return View();
         }
         [HttpPost]
@@ -30,6 +33,7 @@ namespace Tarun.Controllers
             if (ModelState.IsValid)
             {
                 _Service_Requester.Add(model);
+                return RedirectToAction("Create", "Contact");
             }
             return View(model);
         }

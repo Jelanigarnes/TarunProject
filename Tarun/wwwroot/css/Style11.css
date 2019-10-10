@@ -1,0 +1,59 @@
+﻿:root {
+    --main-color: #06109c;
+    --sub-color: #3d47c7;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-color {
+    background-color: var(--main-color);
+}
+
+form {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+footer {
+    background-color: #ccc;
+}
+
+#social-networks a {
+    color: #fff;
+}
+
+#social-networks {
+    background-color: var(--sub-color);
+    color: #fff;
+}
+
+.footer-copyright {
+    border-top: 1px solid var(--main-color);
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+#errorDisplay {
+    background-color: pink;
+    margin: 0 0 10px 0;
+}
+
+menu li {
+    display: inline;
+}
+
+    menu li::after {
+        content: ' |';
+    }
+
+    menu li:last-of-type::after {
+        content: "";
+    }
+
+.input-validation-error {
+    border: 1px solid #ff0000 !important;
+    background-color: #FF0000;
+}

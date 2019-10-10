@@ -36,6 +36,18 @@
             @Html.DisplayFor(model => model.Phone)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.GenderID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GenderID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServiceID)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Password)
         </dt>
         <dd>
@@ -47,34 +59,11 @@
         <dd>
             @Html.DisplayFor(model => model.ConfirmPassword)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedTimeStamp)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedTimeStamp)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedBy)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedBy)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ServiceRequestID)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ServiceRequestID)
-        </dd>
+      
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="Service_ProviderID" />
+        
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-action="Index">Back to List</a>
     </form>

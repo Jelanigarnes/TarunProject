@@ -14,18 +14,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Service_RequesterID" class="control-label"></label>
-                <input asp-for="Service_RequesterID" class="form-control" />
+                <select asp-for="Service_RequesterID" class="form-control" 
+                       asp-items="@(new SelectList(ViewBag.Service_Requesters, "Service_RequesterID","Email"))">
+                </select>
                 <span asp-validation-for="Service_RequesterID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ServiceID" class="control-label"></label>
-                <input asp-for="ServiceID" class="form-control" />
+                <select asp-for="ServiceID" class="form-control" 
+                        asp-items="@(new SelectList(ViewBag.Services, "ServiceID","ServiceName"))">               
+                </select>
                 <span asp-validation-for="ServiceID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Service" class="control-label"></label>
-                <input asp-for="Service" class="form-control" />
-                <span asp-validation-for="Service" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ServiceDate" class="control-label"></label>
@@ -58,13 +57,12 @@
                 <span asp-validation-for="APT_House" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Location" class="control-label"></label>
-                <input asp-for="Location" class="form-control" />
-                <span asp-validation-for="Location" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
+                <select asp-for="Status" class="form-control">
+                <option value="Open">Open</option>
+                <option value="closed">Closed</option>
+                <option value="assigned">Assigned</option>
+                </select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -78,6 +76,3 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tarun.Data;
 using Tarun.Models;
 using Tarun.Services;
 
@@ -9,8 +10,8 @@ namespace Tarun.Repository
 {
     public class Service_ProviderRepository : IService_Provider
     {
-        private DB_Context db;
-        public Service_ProviderRepository(DB_Context _db)
+        private ApplicationDbContext db;
+        public Service_ProviderRepository(ApplicationDbContext _db)
         {
             db = _db;
         }

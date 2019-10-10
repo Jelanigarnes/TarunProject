@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tarun.Models
 {
+   
     public class Service_Requester
     {
         [Key]
@@ -16,20 +17,16 @@ namespace Tarun.Models
 
         [DisplayName("Last Name")]
         public string LastName { get; set; }
-
+      
         public string Email { get; set; }
 
-        public string Phone { get; set; }  
+        public string Phone { get; set; }
 
+        [DisplayName("Gender")]
+        public int GenderID { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
-
-        [DisplayName("Modified Time Stamp")]
-        public DateTime ModifiedTimeStamp { get; set; }
-
-        [DisplayName("Modified By")]
-        public string ModifiedBy { get; set; }
-        public string Image { get; set; }
+          
         
     }
 

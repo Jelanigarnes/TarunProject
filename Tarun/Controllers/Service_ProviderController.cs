@@ -11,9 +11,15 @@ namespace Tarun.Controllers
     public class Service_ProviderController : Controller
     {
         private readonly IService_Provider _ServiceProvider;
-        public Service_ProviderController(IService_Provider _IserviceProvider)
+        private readonly IGender _Gender;
+        private readonly IService _Service;
+       
+        public Service_ProviderController(IService_Provider _IserviceProvider , IGender _IGender , IService _IService)
         {
             _ServiceProvider = _IserviceProvider;
+            _Gender = _IGender;
+            _Service = _IService;
+            
         }
 
         public IActionResult Index()
@@ -23,6 +29,9 @@ namespace Tarun.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            
+            ViewBag.Services = _Service.GetServices;        
+            ViewBag.Genders = _Gender.GetGenders;
             return View();
         }
         [HttpPost]
@@ -31,6 +40,7 @@ namespace Tarun.Controllers
             if (ModelState.IsValid)
             {
                 _ServiceProvider.Add(model);
+                return RedirectToAction("Create","Contact");
             }
             return View(model);
         }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tarun.Models
 {
+   
     public class Service_Provider
     {
         [Key]
@@ -17,24 +18,34 @@ namespace Tarun.Models
         [DisplayName("Last Name")]
         [Required(ErrorMessage = "Last Name is Required")]
         public string LastName { get; set; }
+
         [Required(ErrorMessage = "Email is Required")]
         public string Email { get; set; }
+
+
+        [Required(ErrorMessage = "Phone number is Required")]
         public string Phone { get; set; }
+
+        [DisplayName("Gender")]
+        [Required(ErrorMessage = "Gender is Required")]
+        public int GenderID { get; set; }
+        public Gender Genders { get; set; }
+
+        [DisplayName("Services")]
+        public int ServiceID { get; set; }
+
+        public Service Services { get; set; }
+
+
         [Required(ErrorMessage = "Password is Required")]
         public string Password { get; set; }
+
+        [DisplayName("Confirm Password")]
+        [Required(ErrorMessage = "Confirm Password is Required")]
         public string ConfirmPassword { get; set; }
-        
-        [DisplayName("Modified Time Stamp")]
-        [Required(ErrorMessage = "Modified Time Stamp is Required")]
-        public DateTime ModifiedTimeStamp { get; set; }
-        [DisplayName("Modified By Stamp")]
-        [Required(ErrorMessage = "Modified By is Required")]
-        public string ModifiedBy { get; set; }
-        public int Image { get; set; }
+     
         
         
-        [DisplayName("Service Request")]
-        public int ServiceRequestID { get; set; }
     }
 
 

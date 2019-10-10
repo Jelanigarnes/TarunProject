@@ -11,9 +11,14 @@ namespace Tarun.Models
     {
         ON,BC,AB,MB,NB,NL,NS,NT,NU,PE,QC,SK,YT
     }
+
+    public enum Country
+    {
+        Canada
+    }
     public class Contact
     {
-       [Key]
+        [Key]
         public int ContactID { get; set; }
         [Required(ErrorMessage = "Street is Required")]
         public string Street { get; set; }
@@ -36,7 +41,7 @@ namespace Tarun.Models
 
         [DisplayName("Country")]
         [Required(ErrorMessage = "Country is Required")]
-        public string Country { get; set; }
+        public Country? Country { get; set; }
 
         
     }

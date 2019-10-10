@@ -19,7 +19,14 @@ namespace Tarun.Controllers
         public IActionResult Index()
         {
             return View(_Report.GetReports);
+            //return View(_Report.GetReports);
         }
+        //[HttpPost]
+        /*public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
+        }*/
+
         [HttpGet]
         public IActionResult Create()
         {
