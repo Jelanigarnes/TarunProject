@@ -57,5 +57,11 @@ namespace Tarun.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult Details(int? ID)
+        {
+            return View(_ServiceRequest.GetServiceRequest(ID));
+        }
+
     }
 }

@@ -16,7 +16,7 @@ namespace Tarun.Repository
         {
             db = _db;
         }
-        public IEnumerable<ServiceRequest> GetServiceRequests => db.ServiceRequests.Include(s => s.Service);
+        public IEnumerable<ServiceRequest> GetServiceRequests => db.ServiceRequests.Include(sr=>sr.Service_Requester).Include(s => s.Service);
 
         public void Add(ServiceRequest _ServiceRequest)
         {
@@ -33,7 +33,9 @@ namespace Tarun.Repository
 
         public ServiceRequest GetServiceRequest(int? ID)
         {
-            ServiceRequest dbEntity = db.ServiceRequests.Find(ID);
+            ServiceRequest dbEntity = db.ServiceRequests.Include(sr => sr.Service_Requester)
+                                                        .Include(s => s.Service)
+                                                        .SingleOrDefault(sm => sm.ServiceRequestID == ID);
             return dbEntity;
         }
     }
