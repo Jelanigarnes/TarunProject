@@ -12,7 +12,7 @@ namespace Tarun.Controllers
     {
         private readonly IService _Service;
 
-        public ServiceController (IService _Iservice)
+        public ServiceController(IService _Iservice)
         {
             _Service = _Iservice;
         }
@@ -23,25 +23,36 @@ namespace Tarun.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            Service model = new Service();
+            model.ServiceID = 0;
+            return View(model);
         }
         [HttpPost]
         public IActionResult Create(Service model)
         {
             if (ModelState.IsValid)
             {
-                
+
                 _Service.Add(model);
                 return RedirectToAction("Index");
             }
-            return View(model);
+            return View();
 
         }
         [HttpGet]
         public IActionResult Delete(int? ID)
         {
-            Service model = _Service.GetService(ID);
-            return View(model);
+            if (ID == null)
+            {
+                return NotFound();
+
+            }
+            else
+            {
+                Service model = _Service.GetService(ID);
+                return View(model);
+            }
+           
         }
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirm(int? ID)
@@ -49,8 +60,16 @@ namespace Tarun.Controllers
             _Service.Remove(ID);
             return RedirectToAction("Index");
         }
+        public IActionResult Details(int? ID)
+        {
+            return View(_Service.GetService(ID));
+        }
+        public IActionResult Edit(int? ID)
+        {
+            var model = _Service.GetService(ID);
+            return View("Create", model);
+        }
+
 
     }
-
-    
 }

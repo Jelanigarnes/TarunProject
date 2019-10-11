@@ -49,5 +49,11 @@ namespace Tarun.Controllers
             _Service_Requester.Remove(ID);
             return RedirectToAction("Index");
         }
+
+        public IActionResult Edit(int? ID)
+        {
+            var model = _Service_Requester.GetService_Requester(ID);
+            return View("Create", model);
+        }
     }
 }

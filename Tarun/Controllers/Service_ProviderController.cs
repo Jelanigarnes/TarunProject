@@ -43,7 +43,7 @@ namespace Tarun.Controllers
                 _ServiceProvider.Add(model);
                 return RedirectToAction("Create","Contact");
             }
-            return View(model);
+            return View();
         }
         [HttpGet]
         public IActionResult Delete(int? ID)
@@ -62,6 +62,10 @@ namespace Tarun.Controllers
         {
             return View(_ServiceRequest.GetServiceRequests);
         }
-
+        public IActionResult Edit(int? ID)
+        {
+            var model = _ServiceRequest.GetServiceRequest(ID);
+            return View("Create", model);
+        }
     }
 }

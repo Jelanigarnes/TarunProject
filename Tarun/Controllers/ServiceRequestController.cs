@@ -29,8 +29,7 @@ namespace Tarun.Controllers
         public IActionResult Create()
         {
             ViewBag.Service_Requesters = _Service_Requester.GetService_Requesters;
-            ViewBag.Services = _Service.GetServices;
-            
+            ViewBag.Services = _Service.GetServices;         
             return View();
         }
         [HttpPost]
@@ -62,6 +61,10 @@ namespace Tarun.Controllers
         {
             return View(_ServiceRequest.GetServiceRequest(ID));
         }
-
+        public IActionResult Edit(int? ID)
+        {
+            var model = _ServiceRequest.GetServiceRequest(ID);
+            return View("Create", model);
+        }
     }
 }
