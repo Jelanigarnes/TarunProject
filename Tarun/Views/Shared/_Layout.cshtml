@@ -31,13 +31,36 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>  
-                    <li><a asp-area="" asp-controller="ServiceRequest" asp-action="Create">Service Request</a></li>
-                    <li><a asp-area="" asp-controller="ServiceRequest" asp-action="Index">My Services</a></li>
-                    <li><a asp-area="" asp-controller="Service_Provider" asp-action="MatchRequest">Match Request</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Service Requester <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="ServiceRequest" asp-action="Create">Service Request</a></li>
+                            <li><a asp-area="" asp-controller="ServiceRequest" asp-action="Index">My Services</a></li>
+                            <li><a asp-area="" asp-controller="Service" asp-action="Index">Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Service Provider <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Service_Provider" asp-action="MatchRequest">Match Request</a></li>                            
+                            <li><a asp-area="" asp-controller="Service" asp-action="Index">Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Service_Provider" asp-action="Index">List of Service Providers</a></li>
+                            <li><a asp-area="" asp-controller="Service_Requester" asp-action="Index">List of Service Requesters</a></li>
+                            <li><a asp-area="" asp-controller="Service" asp-action="Index">List of Services</a></li>
+                            <li><a asp-area="" asp-controller="ServiceRequest" asp-action="Index">List of Service Request</a></li>
+                            <li><a asp-area="" asp-controller="Contact" asp-action="Index">List of User Contacts</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
-                <partial name="_LoginPartial" />
-            </div>
+                        <partial name="_LoginPartial" />
+</div>
         </div>
     </nav>
 

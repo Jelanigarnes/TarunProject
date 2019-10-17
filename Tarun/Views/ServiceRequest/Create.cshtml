@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label asp-for="ServiceID" class="control-label"></label>
                     <select asp-for="ServiceID" class="form-control"
-                            asp-items="@(new SelectList(ViewBag.Services,"ServiceID","ServiceName"))">
+                            asp-items="@(new SelectList(ViewBag.Services,"ServiceID","ServiceName","ServiceDescription"))">
                     </select>
                     <span asp-validation-for="ServiceID" class="text-danger"></span>
                 </div>
@@ -153,10 +153,10 @@
                         <i class="fas fa-home mr-3"></i> Scarborough, Ontario
                     </p>
                     <p>
-                        <i class="fas fa-envelope mr-3"></i> <a href="mailto:blessjiboye@yahoo.com"> Email Blessing!</a>
+                        <i class="fas fa-envelope mr-3"></i> <a href="mailto:sharmanira@hotmail.com"> Email Nira!</a>
                     </p>
                     <p>
-                        <i class="fas fa-phone mr-3"></i> (647) 706-8279
+                        <i class="fas fa-phone mr-3"></i> (647) 907 9677
                     </p>
                 </div>
                 <!-- Grid column -->
